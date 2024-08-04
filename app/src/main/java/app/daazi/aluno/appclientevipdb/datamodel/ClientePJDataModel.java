@@ -6,21 +6,22 @@ package app.daazi.aluno.appclientevipdb.datamodel;
 public class ClientePJDataModel {
 
     /**
-     *     private int id;
-     *     private String primeiroNome;
-     *     private String sobreNome;
-     *     private String email;
-     *     private String senha;
-     *     private boolean pessoaFisica;
+     *     private int fk;
+     *     private String cnpj;
+     *     private String razaoSocial;
+     *     private String dataAbertura;
+     *     private boolean simplesNacional;
+     *     private boolean mei;
      */
 
-    private static final String TABELA = "cliente";
+    private static final String TABELA = "clientePJ";
     private static final String ID = "id";
-    private static final String PRIMEIRO_NOME = "primeiroNome";
-    private static final String SOBRENOME = "sobreNome";
-    private static final String EMAIL = "email";
-    private static final String SENHA = "senha";
-    private static final String PESSOA_FISICA = "pessoaFisica";
+    private static final String FK = "clientePFID";
+    private static final String CNPJ = "cnpj";
+    private static final String RAZAO_SOCIAL = "razaoSocial";
+    private static final String DATA_ABERTURA = "dataAbertura";
+    private static final String SIMPLES_NACIONAL = "simplesNacional";
+    private static final String MEI = "mei";
     private static final String DATA_INC = "datainc";
     private static final String DATA_ALT = "dataalt";
 
@@ -41,16 +42,17 @@ public class ClientePJDataModel {
 
         query = "CREATE TABLE "+TABELA+" ( ";
         query += ID+" INTEGER PRIMARY KEY AUTOINCREMENT, ";
-        query += PRIMEIRO_NOME+" TEXT, ";
-        query += SOBRENOME+" TEXT, ";
-        query += EMAIL+" TEXT, ";
-        query += SENHA+" TEXT, ";
-        query += PESSOA_FISICA+" INTEGER, ";
+        query += FK+" INTEGER, ";
+        query += CNPJ+" TEXT, ";
+        query += RAZAO_SOCIAL+" TEXT, ";
+        query += DATA_ABERTURA+" TEXT, ";
+        query += DATA_ABERTURA+" TEXT, ";
+        query += SIMPLES_NACIONAL+" INTEGER, ";
+        query += MEI+" INTEGER, ";
         query += DATA_INC+" TEXT, ";
-        query += DATA_ALT+" TEXT ";
+        query += DATA_ALT+" TEXT, ";
+        query += "FOREIGN KEY("+FK+") REFERENCES clientePF(id) ";
         query += " )";
-
-
 
         return query;
     }

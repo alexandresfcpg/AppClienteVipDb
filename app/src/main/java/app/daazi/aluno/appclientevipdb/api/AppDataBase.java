@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 
 import app.daazi.aluno.appclientevipdb.datamodel.ClienteDataModel;
 import app.daazi.aluno.appclientevipdb.datamodel.ClientePFDataModel;
+import app.daazi.aluno.appclientevipdb.datamodel.ClientePJDataModel;
 
 public class AppDataBase extends SQLiteOpenHelper {
 
@@ -46,6 +47,16 @@ public class AppDataBase extends SQLiteOpenHelper {
         }catch (SQLException e){
 
             Log.e(AppUtil.LOG_APP, "Erro TB ClientePF: "+e.getMessage());
+        }
+
+        try{
+            db.execSQL(ClientePJDataModel.gerarTabela());
+
+            Log.i(AppUtil.LOG_APP, "TB ClientePJ: "+ClientePJDataModel.gerarTabela());
+
+        }catch (SQLException e){
+
+            Log.e(AppUtil.LOG_APP, "Erro TB ClientePJ: "+e.getMessage());
         }
     }
 

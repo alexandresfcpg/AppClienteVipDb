@@ -21,6 +21,22 @@ public class ClientePFDataModel {
 
     private static String query;
 
+    /**
+     *
+     * CREATE TABLE clientePF (
+     *     id           INTEGER PRIMARY KEY AUTOINCREMENT,
+     *     clienteID    INTEGER,
+     *     cpf          TEXT,
+     *     nomeCompleto TEXT,
+     *     datainc      TEXT,
+     *     dataalt      TEXT,
+     *     FOREIGN KEY (
+     *         clienteID
+     *     )
+     *     REFERENCES cliente (id)
+     * );
+     */
+
     public static String gerarTabela(){
 
         query = "CREATE TABLE "+TABELA+" ( ";
