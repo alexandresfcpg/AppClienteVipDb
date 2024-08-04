@@ -13,8 +13,32 @@
         android:theme="@style/Theme.AppClienteVipDB"
         tools:targetApi="31" >
         <activity
+            android:name=".view.ConsultarClientesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ClientePessoaFisicaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.RecuperarSenhaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ClientePessoaJuridicaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ClienteVipActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.CredencialDeAcessoActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.MainActivity"
-            android:exported="true" >
+            android:exported="false" />
+        <activity
+            android:name=".view.SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

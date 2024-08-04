@@ -8,6 +8,7 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
 import app.daazi.aluno.appclientevipdb.R;
+import app.daazi.aluno.appclientevipdb.api.AppDataBase;
 import app.daazi.aluno.appclientevipdb.api.AppUtil;
 
 public class SplashActivity extends AppCompatActivity {
@@ -16,6 +17,8 @@ public class SplashActivity extends AppCompatActivity {
 
     boolean isLembrarSenha = false;
 
+    AppDataBase dataBase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +26,8 @@ public class SplashActivity extends AppCompatActivity {
 
         salvarSharedPreferences();
         restaurarSharedPreferences();
+
+        dataBase = new AppDataBase(getApplicationContext());
 
         iniciarAplicativo();
     }

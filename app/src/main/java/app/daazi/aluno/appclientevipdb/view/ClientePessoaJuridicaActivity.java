@@ -15,10 +15,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.shashank.sony.fancydialoglib.FancyAlertDialog;
 
-import app.daazi.aluno.appclientevip.R;
-import app.daazi.aluno.appclientevip.api.AppUtil;
-import app.daazi.aluno.appclientevip.model.Cliente;
-import app.daazi.aluno.appclientevip.model.ClientePJ;
+import app.daazi.aluno.appclientevipdb.R;
+import app.daazi.aluno.appclientevipdb.api.AppUtil;
+import app.daazi.aluno.appclientevipdb.model.Cliente;
+import app.daazi.aluno.appclientevipdb.model.ClientePJ;
 
 public class ClientePessoaJuridicaActivity extends AppCompatActivity {
 
