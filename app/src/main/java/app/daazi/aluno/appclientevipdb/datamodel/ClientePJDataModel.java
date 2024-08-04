@@ -28,14 +28,21 @@ public class ClientePJDataModel {
     private static String query;
 
     /**
-     *                 "CREATE TABLE cliente (\n" +
-     *                 "id      INTEGER PRIMARY KEY AUTOINCREMENT, \n" +
-     *                 "nome    TEXT, \n" +
-     *                 "email   TEXT, \n" +
-     *                 "status  INTEGER, \n" +
-     *                 "datainc TEXT, \n" +
-     *                 "dataalt TEXT \n" +
-     *                 ")";
+     * CREATE TABLE clientePJ (
+     *     id              INTEGER PRIMARY KEY AUTOINCREMENT,
+     *     clientePFID     INTEGER,
+     *     cnpj            TEXT,
+     *     razaoSocial     TEXT,
+     *     dataAbertura    TEXT,
+     *     simplesNacional INTEGER,
+     *     mei             INTEGER,
+     *     datainc         TEXT,
+     *     dataalt         TEXT,
+     *     FOREIGN KEY (
+     *         clientePFID
+     *     )
+     *     REFERENCES clientePF (id)
+     * );
      */
 
     public static String gerarTabela(){
@@ -45,7 +52,6 @@ public class ClientePJDataModel {
         query += FK+" INTEGER, ";
         query += CNPJ+" TEXT, ";
         query += RAZAO_SOCIAL+" TEXT, ";
-        query += DATA_ABERTURA+" TEXT, ";
         query += DATA_ABERTURA+" TEXT, ";
         query += SIMPLES_NACIONAL+" INTEGER, ";
         query += MEI+" INTEGER, ";
