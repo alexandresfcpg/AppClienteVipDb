@@ -2,6 +2,7 @@ package app.daazi.aluno.appclientevipdb.model;
 
 public class ClientePF extends Cliente{
 
+    private int fk;
     private String cpf;
     private String nomeCompleto;
 

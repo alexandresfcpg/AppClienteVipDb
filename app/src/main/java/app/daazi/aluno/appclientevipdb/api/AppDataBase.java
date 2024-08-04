@@ -9,6 +9,7 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 import app.daazi.aluno.appclientevipdb.datamodel.ClienteDataModel;
+import app.daazi.aluno.appclientevipdb.datamodel.ClientePFDataModel;
 
 public class AppDataBase extends SQLiteOpenHelper {
 
@@ -26,18 +27,8 @@ public class AppDataBase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Criar as tabelas
-        String sqlTabelaCliente = "CREATE TABLE cliente (\n" +
-                "id      INTEGER PRIMARY KEY AUTOINCREMENT, \n" +
-                "nome    TEXT, \n" +
-                "email   TEXT, \n" +
-                "status  INTEGER, \n" +
-                "datainc TEXT, \n" +
-                "dataalt TEXT \n" +
-                ")";
-
 
         try{
-
             db.execSQL(ClienteDataModel.gerarTabela());
 
             Log.i(AppUtil.LOG_APP, "TB Cliente: "+ClienteDataModel.gerarTabela());
@@ -45,7 +36,16 @@ public class AppDataBase extends SQLiteOpenHelper {
         }catch (SQLException e){
 
             Log.e(AppUtil.LOG_APP, "Erro TB Cliente: "+e.getMessage());
+        }
 
+        try{
+            db.execSQL(ClientePFDataModel.gerarTabela());
+
+            Log.i(AppUtil.LOG_APP, "TB ClientePF: "+ClientePFDataModel.gerarTabela());
+
+        }catch (SQLException e){
+
+            Log.e(AppUtil.LOG_APP, "Erro TB ClientePF: "+e.getMessage());
         }
     }
 
