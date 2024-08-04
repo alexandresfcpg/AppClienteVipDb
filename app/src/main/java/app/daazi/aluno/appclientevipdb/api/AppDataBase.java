@@ -8,6 +8,8 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import app.daazi.aluno.appclientevipdb.datamodel.ClienteDataModel;
+
 public class AppDataBase extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "clienteDB.sqlite";
@@ -36,9 +38,9 @@ public class AppDataBase extends SQLiteOpenHelper {
 
         try{
 
-            db.execSQL(sqlTabelaCliente);
+            db.execSQL(ClienteDataModel.gerarTabela());
 
-            Log.i(AppUtil.LOG_APP, "TB Cliente: "+sqlTabelaCliente);
+            Log.i(AppUtil.LOG_APP, "TB Cliente: "+ClienteDataModel.gerarTabela());
 
         }catch (SQLException e){
 
