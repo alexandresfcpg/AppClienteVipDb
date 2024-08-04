@@ -1,8 +1,10 @@
 package app.daazi.aluno.appclientevipdb.api;
 
 import android.content.Context;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -22,6 +24,27 @@ public class AppDataBase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Criar as tabelas
+        String sqlTabelaCliente = "CREATE TABLE cliente (\n" +
+                "id      INTEGER PRIMARY KEY AUTOINCREMENT, \n" +
+                "nome    TEXT, \n" +
+                "email   TEXT, \n" +
+                "status  INTEGER, \n" +
+                "datainc TEXT, \n" +
+                "dataalt TEXT \n" +
+                ")";
+
+
+        try{
+
+            db.execSQL(sqlTabelaCliente);
+
+            Log.i(AppUtil.LOG_APP, "TB Cliente: "+sqlTabelaCliente);
+
+        }catch (SQLException e){
+
+            Log.e(AppUtil.LOG_APP, "Erro TB Cliente: "+e.getMessage());
+
+        }
     }
 
     @Override
