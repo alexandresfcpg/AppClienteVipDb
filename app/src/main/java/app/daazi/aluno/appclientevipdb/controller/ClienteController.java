@@ -20,7 +20,7 @@ public class ClienteController extends AppDataBase {
 
     public ClienteController(@Nullable Context context) {
         super(context);
-        }
+    }
 
     public boolean incluir(Cliente obj) {
 
@@ -56,7 +56,7 @@ public class ClienteController extends AppDataBase {
 
     public List<Cliente> listar() {
 
-        return list();
+        return list(TABELA);
     }
 
 }
