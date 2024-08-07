@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.shashank.sony.fancydialoglib.FancyAlertDialog;
 
+import java.util.List;
+
 import app.daazi.aluno.appclientevipdb.R;
 import app.daazi.aluno.appclientevipdb.api.AppUtil;
 import app.daazi.aluno.appclientevipdb.controller.ClienteController;
@@ -33,6 +35,8 @@ public class LoginActivity extends AppCompatActivity {
     Button btnAcessar, btnSejaVip;
 
     boolean isFormularioOK, isLembrarSenha;
+
+    ClienteController controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,6 +145,12 @@ public class LoginActivity extends AppCompatActivity {
 
         cliente = new Cliente();
 
+        controller = new ClienteController(getApplicationContext());
+        controller.incluir(cliente);
+        controller.alterar(cliente);
+        controller.deletar(cliente);
+        List<Cliente> clientes = controller.listar();
+
         restaurarSharedPreferences();
     }
 
@@ -151,7 +161,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public boolean validarDadosDoUsuario() {
 
-        return ClienteController.validarDadosDoCliente(cliente, editEmail.getText().toString(), editSenha.getText().toString());
+        return true;
     }
 
     private void salvarSharedPreferences() {

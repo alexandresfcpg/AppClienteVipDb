@@ -1,5 +1,6 @@
 package app.daazi.aluno.appclientevipdb.api;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,9 +9,13 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import app.daazi.aluno.appclientevipdb.datamodel.ClienteDataModel;
 import app.daazi.aluno.appclientevipdb.datamodel.ClientePFDataModel;
 import app.daazi.aluno.appclientevipdb.datamodel.ClientePJDataModel;
+import app.daazi.aluno.appclientevipdb.model.Cliente;
 
 public class AppDataBase extends SQLiteOpenHelper {
 
@@ -64,5 +69,27 @@ public class AppDataBase extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Atualizar o banco de dados e as tabelas
 
+    }
+
+    public boolean insert(String tabela, ContentValues dados){
+
+        return true;
+    }
+
+    public boolean delete(String tabela, int id){
+
+        return true;
+    }
+
+    public boolean update(String tabela, ContentValues dados){
+
+        return true;
+    }
+
+    public List<Cliente> list(){
+
+        List<Cliente> list = new ArrayList<>();
+
+        return list;
     }
 }
