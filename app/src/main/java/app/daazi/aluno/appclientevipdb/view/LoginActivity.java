@@ -143,9 +143,15 @@ public class LoginActivity extends AppCompatActivity {
 
         isFormularioOK = false;
 
+        controller = new ClienteController(getApplicationContext());
         cliente = new Cliente();
 
-        controller = new ClienteController(getApplicationContext());
+        cliente.setPrimeiroNome("Cliente 1");
+        cliente.setSobreNome("Sobrenome 1");
+        cliente.setEmail("Email 1");
+        cliente.setSenha("123456");
+        cliente.setPessoaFisica(true);
+
         controller.incluir(cliente);
         controller.alterar(cliente);
         controller.deletar(cliente);
