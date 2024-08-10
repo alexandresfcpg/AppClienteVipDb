@@ -147,23 +147,26 @@ public class LoginActivity extends AppCompatActivity {
         cliente = new Cliente();
 
         //Código para incluir
-        /*cliente.setPrimeiroNome("Cliente 1");
-        cliente.setSobreNome("Sobrenome 1");
-        cliente.setEmail("Email 1");
-        cliente.setSenha("123456");
-        cliente.setPessoaFisica(true);*/
+        /*cliente.setPrimeiroNome("Cliente 3");
+        cliente.setSobreNome("Sobrenome 3");
+        cliente.setEmail("Email 3");
+        cliente.setSenha("02468");
+        cliente.setPessoaFisica(false);*/
 
         //Código para alterar
-        cliente.setId(1);
+        /*cliente.setId(1);
         cliente.setPrimeiroNome("Cliente alterado");
         cliente.setSobreNome("Sobrenome alterado");
         cliente.setEmail("Email alterado");
         cliente.setSenha("654321");
-        cliente.setPessoaFisica(false);
+        cliente.setPessoaFisica(false);*/
+
+        //Código para excluir
+        cliente.setId(2);
 
         //controller.incluir(cliente);
-        controller.alterar(cliente);
-        //controller.deletar(cliente);
+        //controller.alterar(cliente);
+        controller.deletar(cliente);
         //List<Cliente> clientes = controller.listar();
 
         restaurarSharedPreferences();
