@@ -166,8 +166,8 @@ public class LoginActivity extends AppCompatActivity {
 
         //controller.incluir(cliente);
         //controller.alterar(cliente);
-        controller.deletar(cliente);
-        //List<Cliente> clientes = controller.listar();
+        //controller.deletar(cliente);
+        List<Cliente> clientes = controller.listar();
 
         restaurarSharedPreferences();
     }
